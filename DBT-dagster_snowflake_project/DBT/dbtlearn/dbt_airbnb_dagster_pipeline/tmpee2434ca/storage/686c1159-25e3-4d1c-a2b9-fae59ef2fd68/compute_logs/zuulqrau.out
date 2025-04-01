@@ -1,0 +1,40 @@
+Running with dbt=1.7.19
+Registered adapter: snowflake=1.7.1
+Unable to do partial parsing because config vars, config profile, or config target have changed
+Encountered an error:
+[Errno 5] Input/output error: '/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/dbt/include/global_project/macros/relations/materialized_view/rename.sql'
+Traceback (most recent call last):
+  File "/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/dbt/cli/requires.py", line 91, in wrapper
+    result, success = func(*args, **kwargs)
+  File "/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/dbt/cli/requires.py", line 76, in wrapper
+    return func(*args, **kwargs)
+  File "/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/dbt/cli/requires.py", line 169, in wrapper
+    return func(*args, **kwargs)
+  File "/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/dbt/cli/requires.py", line 198, in wrapper
+    return func(*args, **kwargs)
+  File "/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/dbt/cli/requires.py", line 245, in wrapper
+    return func(*args, **kwargs)
+  File "/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/dbt/cli/requires.py", line 271, in wrapper
+    ctx.obj["manifest"] = parse_manifest(
+  File "/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/dbt/parser/manifest.py", line 1790, in parse_manifest
+    manifest = ManifestLoader.get_full_manifest(
+  File "/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/dbt/parser/manifest.py", line 318, in get_full_manifest
+    manifest = loader.load()
+  File "/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/dbt/parser/manifest.py", line 365, in load
+    file_reader.read_files()
+  File "/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/dbt/parser/read_files.py", line 203, in read_files
+    self.read_files_for_project(project, file_types)
+  File "/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/dbt/parser/read_files.py", line 210, in read_files_for_project
+    project_files[file_type_info["parser"]] = read_files_for_parser(
+  File "/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/dbt/parser/read_files.py", line 158, in read_files_for_parser
+    source_files = get_source_files(
+  File "/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/dbt/parser/read_files.py", line 134, in get_source_files
+    fp_list = filesystem_search(project, paths, extension, ignore_spec)
+  File "/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/dbt/parser/search.py", line 74, in filesystem_search
+    for result in find_matching(root, relative_dirs, ext, ignore_spec):
+  File "/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/dbt/clients/system.py", line 79, in find_matching
+    modification_time = os.path.getmtime(absolute_path)
+  File "/usr/lib/python3.10/genericpath.py", line 55, in getmtime
+    return os.stat(filename).st_mtime
+OSError: [Errno 5] Input/output error: '/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/dbt/include/global_project/macros/relations/materialized_view/rename.sql'
+

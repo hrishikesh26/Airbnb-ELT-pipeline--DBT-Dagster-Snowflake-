@@ -1,0 +1,24 @@
+Running with dbt=1.7.19
+Registered adapter: snowflake=1.7.1
+Unable to do partial parsing because config vars, config profile, or config target have changed
+Found 8 models, 1 snapshot, 1 analysis, 22 tests, 1 seed, 3 sources, 1 exposure, 0 metrics, 817 macros, 0 groups, 0 semantic models
+
+Concurrency: 1 threads (target='dev')
+
+1 of 5 START sql incremental model DEV.fct_reviews ............................. [RUN]
+Loading AIRBNB.DEV.fct_reviews incrementally (start_date: 2025-02-07T00:00:00+00:00, end_date: 2025-02-08T00:00:00+00:00)
+1 of 5 OK created sql incremental model DEV.fct_reviews ........................ [[32mSUCCESS 0[0m in 2.90s]
+2 of 5 START test accepted_values_fct_reviews_review_sentiment__positive__neutral__negative  [RUN]
+2 of 5 PASS accepted_values_fct_reviews_review_sentiment__positive__neutral__negative  [[32mPASS[0m in 0.68s]
+3 of 5 START test consistent_created_at ........................................ [RUN]
+3 of 5 PASS consistent_created_at .............................................. [[32mPASS[0m in 1.38s]
+4 of 5 START test not_null_fct_reviews_reviewer_name ........................... [RUN]
+4 of 5 PASS not_null_fct_reviews_reviewer_name ................................. [[32mPASS[0m in 0.56s]
+5 of 5 START test relationships_fct_reviews_listing_id__listing_id__ref_dim_listings_cleansed_  [RUN]
+5 of 5 PASS relationships_fct_reviews_listing_id__listing_id__ref_dim_listings_cleansed_  [[32mPASS[0m in 0.66s]
+
+Finished running 1 incremental model, 4 tests in 0 hours 0 minutes and 8.24 seconds (8.24s).
+
+[32mCompleted successfully[0m
+
+Done. PASS=5 WARN=0 ERROR=0 SKIP=0 TOTAL=5

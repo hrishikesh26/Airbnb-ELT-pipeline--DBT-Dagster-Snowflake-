@@ -1,0 +1,80 @@
+[32m2025-03-30 18:43:04 -0500[0m - dagster - [34mDEBUG[0m - materialize_dbt_models - 4a0905a7-bddf-4481-9d4e-2d5e38dc56fd - 300258 - LOGS_CAPTURED - Started capturing logs in process (pid: 300258).
+[32m2025-03-30 18:43:04 -0500[0m - dagster - [34mDEBUG[0m - materialize_dbt_models - 4a0905a7-bddf-4481-9d4e-2d5e38dc56fd - 300258 - dbtlearn_dbt_assets - STEP_START - Started execution of step "dbtlearn_dbt_assets".
+[32m2025-03-30 18:43:10 -0500[0m - dagster - [34mINFO[0m - materialize_dbt_models - 4a0905a7-bddf-4481-9d4e-2d5e38dc56fd - dbtlearn_dbt_assets - A dbt subsetted execution is not being performed. Using the default dbt selection arguments `['--select', 'fqn:*', '--exclude', 'fct_reviews']`.
+[32m2025-03-30 18:43:11 -0500[0m - dagster - [34mINFO[0m - materialize_dbt_models - 4a0905a7-bddf-4481-9d4e-2d5e38dc56fd - dbtlearn_dbt_assets - Copying `/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dbtlearn/target/partial_parse.msgpack` to `/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dbtlearn/target/dbtlearn_dbt_assets-4a0905a-85fa8b8/partial_parse.msgpack` to take advantage of partial parsing.
+[32m2025-03-30 18:43:11 -0500[0m - dagster - [34mINFO[0m - materialize_dbt_models - 4a0905a7-bddf-4481-9d4e-2d5e38dc56fd - dbtlearn_dbt_assets - Running dbt command: `dbt build --select fqn:* --exclude fct_reviews`.
+[32m2025-03-30 18:45:19 -0500[0m - dagster - [34mERROR[0m - [31mmaterialize_dbt_models - 4a0905a7-bddf-4481-9d4e-2d5e38dc56fd - 300258 - dbtlearn_dbt_assets - STEP_FAILURE - Execution of step "dbtlearn_dbt_assets" failed.
+
+dagster_dbt.errors.DagsterDbtCliRuntimeError: The dbt CLI process failed with exit code 2. Check the stdout in the Dagster compute logs for the full information about the error, or view the dbt debug log: /mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dbtlearn/target/dbtlearn_dbt_assets-4a0905a-85fa8b8/dbt.log.
+
+Errors parsed from dbt logs:
+Encountered an error:
+[Errno 5] Input/output error: '/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/snowflake/connector/auth/_auth.py'
+Traceback (most recent call last):
+  File "/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/dbt/cli/requires.py", line 91, in wrapper
+    result, success = func(*args, **kwargs)
+  File "/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/dbt/cli/requires.py", line 76, in wrapper
+    return func(*args, **kwargs)
+  File "/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/dbt/cli/requires.py", line 166, in wrapper
+    profile = load_profile(flags.PROJECT_DIR, flags.VARS, flags.PROFILE, flags.TARGET, threads)
+  File "/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/dbt/config/runtime.py", line 70, in load_profile
+    profile = Profile.render(
+  File "/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/dbt/config/profile.py", line 399, in render
+    return cls.from_raw_profiles(
+  File "/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/dbt/config/profile.py", line 365, in from_raw_profiles
+    return cls.from_raw_profile_info(
+  File "/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/dbt/config/profile.py", line 321, in from_raw_profile_info
+    credentials: Credentials = cls._credentials_from_profile(
+  File "/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/dbt/config/profile.py", line 145, in _credentials_from_profile
+    cls = load_plugin(typename)
+  File "/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/dbt/adapters/factory.py", line 212, in load_plugin
+  File "/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/dbt/adapters/factory.py", line 58, in load_plugin
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/dbt/adapters/snowflake/__init__.py", line 2, in <module>
+    from dbt.adapters.snowflake.connections import SnowflakeConnectionManager  # noqa
+  File "/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/dbt/adapters/snowflake/connections.py", line 19, in <module>
+  File "/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/snowflake/connector/__init__.py", line 19, in <module>
+  File "/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/snowflake/connector/connection.py", line 36, in <module>
+    from .auth import (
+  File "/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/snowflake/connector/auth/__init__.py", line 7, in <module>
+    from ._auth import Auth, get_public_key_fingerprint, get_token_from_private_key
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1016, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1073, in get_data
+OSError: [Errno 5] Input/output error: '/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/snowflake/connector/auth/_auth.py'
+
+
+Stack Trace:
+  File "/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/dagster/_core/execution/plan/execute_plan.py", line 286, in dagster_event_sequence_for_step
+    for step_event in check.generator(step_events):
+  File "/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/dagster/_core/execution/plan/execute_step.py", line 487, in core_dagster_event_sequence_for_step
+    for user_event in _step_output_error_checked_user_event_sequence(
+  File "/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/dagster/_core/execution/plan/execute_step.py", line 169, in _step_output_error_checked_user_event_sequence
+    for user_event in user_event_sequence:
+  File "/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/dagster/_core/execution/plan/execute_step.py", line 95, in _process_asset_results_to_events
+    for user_event in user_event_sequence:
+  File "/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/dagster/_core/execution/plan/compute.py", line 212, in execute_core_compute
+    for step_output in _yield_compute_results(step_context, inputs, compute_fn, compute_context):
+  File "/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/dagster/_core/execution/plan/compute.py", line 181, in _yield_compute_results
+    for event in iterate_with_context(
+  File "/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/dagster/_utils/__init__.py", line 467, in iterate_with_context
+    next_output = next(iterator)
+  File "/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dbtlearn/dbt_airbnb_dagster_pipeline/dbt_airbnb_dagster_pipeline/assets.py", line 30, in dbtlearn_dbt_assets
+    yield from dbt.cli(["build"], context=context).stream()
+  File "/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/dagster_dbt/core/resources_v2.py", line 390, in stream
+    for event in self.stream_raw_events():
+  File "/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/dagster_dbt/core/resources_v2.py", line 426, in stream_raw_events
+    self._raise_on_error()
+  File "/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/dagster_dbt/core/resources_v2.py", line 484, in _raise_on_error
+    raise DagsterDbtCliRuntimeError(
+[0m

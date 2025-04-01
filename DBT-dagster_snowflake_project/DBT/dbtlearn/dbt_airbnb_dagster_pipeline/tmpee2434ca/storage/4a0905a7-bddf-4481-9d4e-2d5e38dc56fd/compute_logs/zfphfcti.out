@@ -1,0 +1,46 @@
+Running with dbt=1.7.19
+Encountered an error:
+[Errno 5] Input/output error: '/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/snowflake/connector/auth/_auth.py'
+Traceback (most recent call last):
+  File "/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/dbt/cli/requires.py", line 91, in wrapper
+    result, success = func(*args, **kwargs)
+  File "/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/dbt/cli/requires.py", line 76, in wrapper
+    return func(*args, **kwargs)
+  File "/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/dbt/cli/requires.py", line 166, in wrapper
+    profile = load_profile(flags.PROJECT_DIR, flags.VARS, flags.PROFILE, flags.TARGET, threads)
+  File "/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/dbt/config/runtime.py", line 70, in load_profile
+    profile = Profile.render(
+  File "/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/dbt/config/profile.py", line 399, in render
+    return cls.from_raw_profiles(
+  File "/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/dbt/config/profile.py", line 365, in from_raw_profiles
+    return cls.from_raw_profile_info(
+  File "/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/dbt/config/profile.py", line 321, in from_raw_profile_info
+    credentials: Credentials = cls._credentials_from_profile(
+  File "/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/dbt/config/profile.py", line 145, in _credentials_from_profile
+    cls = load_plugin(typename)
+  File "/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/dbt/adapters/factory.py", line 212, in load_plugin
+  File "/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/dbt/adapters/factory.py", line 58, in load_plugin
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/dbt/adapters/snowflake/__init__.py", line 2, in <module>
+    from dbt.adapters.snowflake.connections import SnowflakeConnectionManager  # noqa
+  File "/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/dbt/adapters/snowflake/connections.py", line 19, in <module>
+  File "/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/snowflake/connector/__init__.py", line 19, in <module>
+  File "/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/snowflake/connector/connection.py", line 36, in <module>
+    from .auth import (
+  File "/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/snowflake/connector/auth/__init__.py", line 7, in <module>
+    from ._auth import Auth, get_public_key_fingerprint, get_token_from_private_key
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1016, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1073, in get_data
+OSError: [Errno 5] Input/output error: '/mnt/c/Users/hrish/Desktop/temp/DBT - Udemy/dagster_venv/lib/python3.10/site-packages/snowflake/connector/auth/_auth.py'
+

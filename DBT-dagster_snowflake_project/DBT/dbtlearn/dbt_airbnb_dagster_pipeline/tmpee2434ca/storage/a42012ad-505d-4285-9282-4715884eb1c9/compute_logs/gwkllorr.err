@@ -1,0 +1,8 @@
+Exception while writing logger call to event log: (sqlite3.OperationalError) unable to open database file
+[SQL: INSERT INTO event_logs (run_id, event, dagster_event_type, timestamp, step_key, asset_key, partition) VALUES (?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('a42012ad-505d-4285-9282-4715884eb1c9', '{"__class__": "EventLogEntry", "dagster_event": {"__class__": "DagsterEvent", "event_specific_data": {"__class__": "ComputeLogsCaptureData", "externa ... (521 characters truncated) ... -505d-4285-9282-4715884eb1c9", "step_key": null, "timestamp": 1743378308.4057915, "user_message": "Started capturing logs in process (pid: 300331)."}', 'LOGS_CAPTURED', '2025-03-30 23:45:08.405792', None, None, None)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Exception while writing logger call to event log: (sqlite3.OperationalError) unable to open database file
+[SQL: INSERT INTO event_logs (run_id, event, dagster_event_type, timestamp, step_key, asset_key, partition) VALUES (?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('a42012ad-505d-4285-9282-4715884eb1c9', '{"__class__": "EventLogEntry", "dagster_event": {"__class__": "DagsterEvent", "event_specific_data": {"__class__": "EngineEventData", "error": {"__cl ... (6056 characters truncated) ... 2ad-505d-4285-9282-4715884eb1c9", "step_key": null, "timestamp": 1743378309.782155, "user_message": "Exception while setting up compute log capture"}', 'ENGINE_EVENT', '2025-03-30 23:45:09.782155', None, None, None)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
