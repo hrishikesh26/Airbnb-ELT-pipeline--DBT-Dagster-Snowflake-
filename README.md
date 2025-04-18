@@ -465,8 +465,10 @@ Open your browser at http://localhost:3000/ to see real-time logs, runs, and par
 3.  [dbt-expectations on GitHub](https://github.com/calogica/dbt-expectations).
     
 4.  [Preset (Superset)](https://preset.io/) for dashboarding.
+
+5.  [Udemy](https://www.udemy.com/course/complete-dbt-data-build-tool-bootcamp-zero-to-hero-learn-dbt/?couponCode=24T6MT180425G3)
     
-5.  Snowflake Docs for warehouse setup and management.
+6.  Snowflake Docs for warehouse setup and management.
     
 
 ### Background on Snowflake
